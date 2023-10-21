@@ -3,6 +3,9 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": "./",
+    "types": [
+      "hoist-non-react-statics"
+    ],
     "paths": {
       "@assets/*": [
         "./src/assets/*"
@@ -18,9 +21,8 @@
       ],
       "@storage/*": [
         "./src/storage/*"
-      ],"@theme/*": [
-        "./src/theme/*"
-      ],"@utils/*": [
+      ],
+      "@utils/*": [
         "./src/utils/*"
       ]
     }
