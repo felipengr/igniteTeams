@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { BackIcon, Container, Logo, BackButton } from "./styles";
 import logoImg from '@assets/logo.png'
 
@@ -6,11 +8,17 @@ type Props = {
 }
 
 export function Header({ showBackButton = false }: Props) {
+    const navigation = useNavigation<NativeStackNavigationProp<any>>()
+    
+    function handleGoBack() {
+        navigation.popToTop()
+    }
+
     return (
         <Container>
             {
                 showBackButton &&
-                <BackButton>
+                <BackButton onPress={handleGoBack}>
                     <BackIcon />
                 </BackButton>
             }
