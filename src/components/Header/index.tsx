@@ -11,7 +11,7 @@ export function Header({ showBackButton = false }: Props) {
     const navigation = useNavigation<NativeStackNavigationProp<any>>()
     
     function handleGoBack() {
-        navigation.popToTop()
+        navigation.navigate('groups')
     }
 
     return (
