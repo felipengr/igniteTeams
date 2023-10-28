@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { groupCreate } from "@storage/group/groupCreate";
-import { AppError } from "@utils/appError";
+import { AppError } from "@utils/AppError";
 import { Header } from "@components/Header";
 import { Highlight } from "@components/Highlight";
 import { Button } from "@components/Button";
@@ -21,7 +21,7 @@ export function NewGroup() {
             }
 
             await groupCreate(group)
-            navigation.navigate('players', { groups: group })
+            navigation.navigate('players', { group })
         } catch(error) {
             if(error instanceof AppError) {
                 Alert.alert('Novo grupo', error.message)
